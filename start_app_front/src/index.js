@@ -4,18 +4,22 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import Header from "./components/Header";
 import OfferGrid from "./components/OfferGrid";
-import SlideMenu from './components/SlideMenu';
+import Hero from "./components/Hero";
 
 function App() {
+    const [showApp, setShowApp] = React.useState(false);
+    const [prompt, setPrompt] = React.useState('');
   return (
     <div className="App">
-        <Header/>
-        <OfferGrid offers={''}/>
-        <SlideMenu/>
-        <SearchBar />
-        
+        <Hero setShowApp={setShowApp} setPrompt={setPrompt}/>
+        { showApp && (
+            <>
+                <Header/>
+                <OfferGrid prompt={prompt}/>
+                <SearchBar setPromt={setPrompt} />
+            </>
+        )}
     </div>
-
   );
 }
 

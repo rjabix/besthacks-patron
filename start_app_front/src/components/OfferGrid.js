@@ -1,26 +1,40 @@
 import OfferTile from "../offer_tile";
 import sample from "../sample.svg";
 import React from "react";
+import axios from "axios";
 
-export default function OfferGrid({offers}) {
-    return (<div className=" grid grid-cols-3 p-12 gap-x-12" style={{
+export default function OfferGrid({ prompt }) {
+    const [offers, setOffers] = React.useState([]);
+    React.useEffect(() => {
+        axios.post('http://localhost:5094/api/ai/searchjobs', {
+            prompt: prompt,
+        }).then((response) => {
+            setOffers(response.data)
+        }).catch((error) => {
+            console.error(error)
+        })
+    }, [prompt]);
+
+    return (
+        <div className=" grid grid-cols-3 p-12 gap-x-12" style={{
             overflowY: 'auto'
         }}>
-            <OfferTile pic={sample}
-                       jobTitle="Software Developer and not it is a very long title that should be truncated"
-                       jobRequirements={[
-                           "Bachelor's degree in Computer Science",
-                           "3+ years of experience in software development",
-                           "Experience with Java, Python, and C++"
-                       ]}
-                       onElaborateClick={() => {
-                           console.log("Elaborate clicked")
-                       }}
-                       noViewClick={() => {
-                           console.log("View clicked")
-                       }}
-            />
-            {/* Add more OfferTile components as needed */}
+            {offers.map((offer, index) => (
+                <OfferTile pic={sample}
+                           jobTitle={offer.title}
+                           jobRequirements={[
+                               "Requirement 1",
+                               "Requirement 2",
+                               "Requirement 3",
+                               "Requirement 4",
+                               "Requirement 5",
+                           ]}
+                           link_var={offer.link}
+                           onElaborateClick={() => {
+                               console.log("Elaborate clicked")
+                           }}
+                />
+            ))}
         </div>
     );
 }
