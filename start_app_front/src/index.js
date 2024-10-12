@@ -1,29 +1,33 @@
-// Import necessary packages
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import './App.css';
-import OfferTile from './offer_tile.js';
-import sampleImage from './sample.svg';
-import { Carousel } from '@mantine/carousel';
-import { MantineProvider } from '@mantine/core';
-
-// Sample data for carousel
-const items = ['item1', 'item2', 'item3', 'item4'];
+import OfferTile from './offer_tile';
+import sample from './sample.svg';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <header className="App-header">
       </header>
-      <Carousel slideSize="70%" height={200} slideGap="md" orientation="horizontal">
-        <div className="flex" style={{ gap: '20px' }}>
-          {items.map((item, index) => ( 
-            <Carousel.Slide key={index}>
-              <OfferTile pic={sampleImage} jobTitle={`Job Title ${index + 1}`} jobRequirements={items} />
-            </Carousel.Slide>
-          ))}
-        </div>
-      </Carousel>
+      <div className="offer-tile-container" style={{ 
+        display: "grid", 
+        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", 
+        gap: "20px", 
+        padding: "20px",
+        overflowY: 'auto', 
+        maxHeight: '80vh' 
+      }}>
+        <OfferTile pic={sample} jobTitle="Software Developer"
+          jobRequirements={[
+            "Bachelor's degree in Computer Science",
+            "3+ years of experience in software development", 
+            "Experience with Java, Python, and C++"
+          ]}
+          onElaborateClick={() => { console.log("Elaborate clicked") }} 
+          noViewClick={() => { console.log("View clicked") }} 
+        />
+        {/* Add more OfferTile components as needed */}
+      </div>
     </div>
   );
 }
@@ -31,9 +35,7 @@ function App() {
 // Initialize and render the root element
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <MantineProvider withGlobalStyles withNormalizeCSS>
     <App />
-  </MantineProvider>
 );
 
 export default App;
