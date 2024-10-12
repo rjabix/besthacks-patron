@@ -1,0 +1,65 @@
+.custom-checkbox {
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    
+  }
+  
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Анимация для состояния :checked */
+  .custom-checkbox input:checked ~ .checkmark {
+
+    background-color: rgb(0, 150, 20);
+    transform: rotate(45deg);
+  }
+  
+  .custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Стилизация галочки */
+  .custom-checkbox .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    
+    transition: border-width 0.3s ease;
+  }
+  
+  /* Анимация галочки */
+  .custom-checkbox input:checked ~ .checkmark:after {
+    border-width: 0 2px 2px 0;
+  }
+
+
+
+  .text_menu{
+    font-size: 50px;
+  }
