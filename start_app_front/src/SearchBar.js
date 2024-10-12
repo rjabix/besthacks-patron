@@ -3,9 +3,14 @@ import React, { useState } from 'react';
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Input value: ",searchTerm);
+  }
 
   return (
     <div className="flex justify-center justify-items-center my-4">
@@ -20,8 +25,8 @@ function SearchBar() {
       />
 
       <button 
-        type="submit"
-        class="font-bold rounded-lg text-lg  w-48 h-8 bg-sky-500 hover:bg-sky-700 text-white justify-center">
+        onClick={handleSubmit}
+        className="font-bold rounded-lg text-lg  w-48 h-8 bg-sky-500 hover:bg-sky-700 text-white justify-center">
           Submit
         </button>
     </div>
