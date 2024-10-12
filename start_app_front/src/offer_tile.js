@@ -2,7 +2,7 @@ import React from 'react';
 
 const OfferTile = ({ pic, jobTitle, jobRequirements, onElaborateClick, noViewClick }) => {
     return (
-        <div className="offer-tile p-4 border rounded shadow-lg mb-4 w-full h-[300px] ">
+        <div className="offer-tile p-4 border  shadow-lg mb-4 w-full h-[300px] rounded-xl ">
             <div className="header flex items-start">
                 <img src={pic} alt="Company logo" className="logo w-16 h-16 mr-4" />
                 <h2 className="job-title text-xl font-bold" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 3, overflow: 'hidden' }}>
