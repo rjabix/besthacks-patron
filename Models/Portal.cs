@@ -30,7 +30,7 @@
         /// </summary>
         /// <param name="portal">The string representation of the Portal.</param>
         /// <returns>The corresponding Portal enum value.</returns>
-        public static Portal FromString(string portal)
+        public static Portal FromString(this string portal)
         {
             return portal.ToLower() switch
             {

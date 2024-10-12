@@ -23,7 +23,12 @@ namespace hackathon_backend.Controllers
         {
             try
             {
-                var job = await Job.CreateJobAsync(_embeddingService, jobRequest.Title, jobRequest.Requirements, PortalExtensions.FromString(jobRequest.Portal), jobRequest.PortalId, DateTime.Parse(jobRequest.ValidUntil));
+                var job = await _context.Jobs.FirstOrDefaultAsync(job => job.Portal == jobRequest.Portal.FromString() && job.PortalId == jobRequest.PortalId);
+                if (job != null)
+                {
+                    return BadRequest("Job already exists.");
+                }
+                job = await Job.CreateJobAsync(_embeddingService, jobRequest.Company, jobRequest.Title, jobRequest.Requirements, jobRequest.Portal.FromString(), jobRequest.PortalId, DateTime.Parse(jobRequest.ValidUntil));
                 if (job == null)
                 {
                     return Accepted("Too soon to expire, adding omitted.");
@@ -40,6 +45,7 @@ namespace hackathon_backend.Controllers
         }
         public class JobRequest
         {
+            public string Company { get; set; }
             public string Title { get; set; }
             public string Requirements { get; set; }
             public string Portal { get; set; }
@@ -50,7 +56,7 @@ namespace hackathon_backend.Controllers
         [HttpGet("GetJob")]
         public async Task<IActionResult> GetJob([FromQuery] string portal, [FromQuery] int id)
         {
-            Job job = await _context.Jobs.FirstAsync(job => job.Portal == PortalExtensions.FromString(portal) && job.PortalId == id) ?? throw new Exception("Job cannot be found.");
+            Job job = await _context.Jobs.FirstAsync(job => job.Portal == portal.FromString() && job.PortalId == id) ?? throw new Exception("Job cannot be found.");
             return Ok(job);
         }
     }

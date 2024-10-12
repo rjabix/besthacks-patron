@@ -30,7 +30,7 @@ namespace hackathon_backend.Services
 
         public async Task<Vector> GetRequirmentsEmbeddingAsync(string text)
         {
-            const string admin_message = "only generate key value pairs of type <skill_required> = <level_required> of following text: ";
+            const string admin_message = "only generate key value pairs of type <skill_required> = <level_required> of following text in english: ";
             ChatCompletion response = await _chat_client.CompleteChatAsync(admin_message + text);
             var key_value_pairs = response.Content[0].Text;
 
@@ -42,8 +42,10 @@ namespace hackathon_backend.Services
 
         public async Task<Vector> GetSearchEmbedding(string text)
         {
-            const string admin_message = "only generate key value pairs of type <skill_name> = <skill_level> of following text: ";
-            ChatCompletion response = await _chat_client.CompleteChatAsync(admin_message + text);
+            ChatCompletionOptions options = new();
+            options.Temperature = 0;
+            const string admin_message = "only generate key value pairs of type <skill_name> = <skill_level> of following text in english: ";
+            ChatCompletion response =  _chat_client.CompleteChat([admin_message + text], options);
             var key_value_pairs = response.Content[0].Text;
 
             OpenAIEmbedding embedding = await _client.GenerateEmbeddingAsync(key_value_pairs) ?? throw new Exception("Failed to generate embedding");

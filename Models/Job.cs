@@ -22,6 +22,10 @@ namespace hackathon_backend.Models
         public string Title { get; set; }
 
         [Required]
+        [Column("company")]
+        public string Company { get; set; }
+
+        [Required]
         public string Requirements { get; set; }
 
         [Required]
@@ -35,7 +39,7 @@ namespace hackathon_backend.Models
         [Required]
         public Vector? RequirementsEmbedding { get; set; }
 
-        public static async Task<Job>? CreateJobAsync(EmbeddingService service, string title, string description, Portal portal, int portalId, DateTime validUntil)
+        public static async Task<Job>? CreateJobAsync(EmbeddingService service, string company,string title, string description, Portal portal, int portalId, DateTime validUntil)
         {
             if (DateTime.Now.AddDays(14) > validUntil)
             {
@@ -47,6 +51,7 @@ namespace hackathon_backend.Models
             var descriptionEmbedding = await service.GetRequirmentsEmbeddingAsync(description);
             return new Job
             {
+                Company = company,
                 Title = title,
                 TitleEmbedding = titleEmbedding,
                 Requirements = description,

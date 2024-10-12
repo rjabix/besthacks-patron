@@ -20,8 +20,9 @@ public class AIController : ControllerBase
     public AIController(ILogger<AIController> logger, IConfiguration config, JobsDbContext context, EmbeddingService embeddingService)
     {
         _logger = logger;
-        _client = new OpenAIClient(config.GetValue<string>("OPENAI_KEY")).GetChatClient("gpt-4o-mini");
+        _client = new OpenAIClient(config!.GetValue<string>("OPENAI_KEY")).GetChatClient("gpt-4o-mini");
         _context = context;
+        _config = config;
         _embeddingService = embeddingService;
     }
 
@@ -47,10 +48,10 @@ public class AIController : ControllerBase
     public async Task<IActionResult> SearchJobs([FromBody] ChatRequest searchRequest) // currently using ChatRequest as it also has 1 string field
     {
         Vector queryEmbedding = await _embeddingService.GetSearchEmbedding(searchRequest.Prompt);
-        List<Job> jobs = await _context.SearchAsync(queryEmbedding, 0);
+        var jobs = await _context.SearchAsync(queryEmbedding, 0, searchRequest.Prompt.Length);
 
         // i think it would not work for other portals than pracuj.pl 
-        var jobs_results = jobs.Select(job => new { job.Title, job.Requirements, link = _config.GetValue<string>("Portals_start_url:" + job.Portal.ToFriendlyString()) + job.PortalId});
+        var jobs_results = jobs.Select(job => new { job.Key.Title, job.Key.Requirements, link = _config.GetValue<string>("Portals_start_url:" + job.Key.Portal.ToFriendlyString()) + job.Key.PortalId, accuracy = job.Value});
 
         //Dictionary<Job, int> job_suitability = [];
         //foreach (var job in jobs)
