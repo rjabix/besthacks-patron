@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import arrow from './assets/arrow.png'
+import arrow from './../assets/arrow.png'
 import { Drawer, Button, List, ListItem, ListItemText } from '@mui/material';
 import './SlideMenu.css';
 
@@ -15,9 +15,10 @@ const SidebarMenu = () => {
   };
   // Содержимое меню
   const menuContent = (
+
     <div>
-        <h1 class="text_menu">Select the sites to search</h1>
-    </div>,
+        <h1 className="textMenu">Select sites to search</h1>
+
 
 
     <List style = {styles.searchlist}>
@@ -63,6 +64,7 @@ const SidebarMenu = () => {
  
       
     </List>
+    </div>
   );
 
   return (

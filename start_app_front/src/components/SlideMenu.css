@@ -60,6 +60,11 @@
 
 
 
-  .text_menu{
-    font-size: 50px;
+  .textMenu{
+    margin: 0;
+    margin: 20px 20px 20px;
+    font-size: 40px;
+    color: black;
+
+    
   }

@@ -4,14 +4,18 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import Header from "./components/Header";
 import OfferGrid from "./components/OfferGrid";
+import SlideMenu from './components/SlideMenu';
 
 function App() {
   return (
     <div className="App">
         <Header/>
         <OfferGrid offers={''}/>
+        <SlideMenu/>
         <SearchBar />
+        
     </div>
+
   );
 }
 
