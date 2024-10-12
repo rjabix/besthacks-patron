@@ -15,8 +15,12 @@ export default function OfferGrid({ prompt }) {
         })
     }, [prompt]);
 
+    React.useLayoutEffect(() => {
+        document.getElementById('offer-grid')?.scrollIntoView({behavior: 'smooth'});
+    });
+
     return (
-        <div className=" grid grid-cols-3 p-12 gap-x-12" style={{
+        <div id='offer-grid' className=" grid grid-cols-3 p-12 gap-x-12" style={{
             overflowY: 'auto'
         }}>
             {offers.map((offer, index) => (
