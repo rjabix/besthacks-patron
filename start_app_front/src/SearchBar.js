@@ -15,6 +15,11 @@ function SearchBar() {
     setSubmittedText(searchTerm);
   }
 
+  const handleClear = (event) => {
+    setIsVisible(false);
+    setSubmittedText("");
+  }
+
   return (
     <div className="flex flex-col justify-center my-4">
       {isVisible && <div 
@@ -32,8 +37,14 @@ function SearchBar() {
         />
 
         <button 
+          onClick={handleClear}
+          className="font-bold rounded-lg text-lg  w-48 h-8 ml-2 bg-gray-200 hover:border hover:border-sky-500 text-sky-500 justify-center">
+            Clear
+        </button>
+
+        <button 
           onClick={handleSubmit}
-          className="font-bold rounded-lg text-lg  w-48 h-8 ml-2 bg-sky-500 hover:bg-sky-700 text-white justify-center">
+          className="font-bold rounded-lg text-lg  w-48 h-8 mr-2 ml-2 bg-sky-500 hover:bg-sky-700 text-white justify-center">
             Submit
           </button>
       </div>
