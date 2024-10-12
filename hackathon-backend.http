@@ -1,6 +1,25 @@
 @hackathon_backend_HostAddress = http://localhost:5094
 
-GET {{hackathon_backend_HostAddress}}/weatherforecast/
+POST {{hackathon_backend_HostAddress}}/api/jobs/createjob
+Content-Type: application/json
 Accept: application/json
 
+{
+  "title": "2",
+  "requirements": "Junior Developer with 1+ year experience in Python and basic knowledge of React.js. Limited experience with Django and no exposure to AWS or Next.js. Eager to learn and grow in a senior-level role",
+  "portal": "pracuj.pl",
+  "portalid": 4224,
+  "validuntil": "24/12"
+}
+
 ###
+
+POST {{hackathon_backend_HostAddress}}/api/ai/searchjobs
+Content-Type: application/json
+Accept: application/json
+
+{
+  "prompt": "React senior dev. 5 years expirience in Python React SQL, Typescript, excellent AWS knowledge"
+}
+
+

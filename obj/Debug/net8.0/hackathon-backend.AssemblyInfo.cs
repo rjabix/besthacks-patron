@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("hackathon-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8e23632a010a941401413c493daaa691c779bd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("hackathon-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("hackathon-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
