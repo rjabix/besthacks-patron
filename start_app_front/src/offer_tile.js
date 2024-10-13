@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useOnclickOutside from 'react-cool-onclickoutside';
 
-const OfferTile = ({ pic, jobTitle, onElaborateClick, noViewClick }) => {
+const OfferTile = ({ pic, jobTitle, jobDescription, onElaborateClick, noViewClick }) => {
     const [showDetails, setShowDetails] = useState(false);
 
     const handleElaborateClick = () => {
@@ -44,11 +44,16 @@ const OfferTile = ({ pic, jobTitle, onElaborateClick, noViewClick }) => {
                 className={`detailed-tile p-4 border shadow-lg h-[300px] rounded-xl w-full bg-gray-100 transition-transform duration-500 ease-in-out absolute top-full left-0 ${showDetails ? 'translate-y-[-100%] opacity-100' : 'translate-y-0 opacity-0'}`}
                 style={{ transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out' }}>
 
-                <h3 className="text-lg font-bold">Detailed Information</h3>
-                <p className="mt-2">More details about the job, company, and other requirements go here.</p>
-                {/* Additional content for detailed view */}
-                
-
+                <div className="header flex items-center flex-grow ml-5">
+                    <h3 className="text-lg font-bold">Detailed Information</h3>
+                </div>
+                <div className="mt-2 overflow-y-auto" style={{ maxHeight: 'calc(100% - 85px)' }}>
+                    <p>{jobDescription}</p>
+                </div>
+                <button
+                    onClick={() => setShowDetails(false)}
+                    className="btn btn-secondary absolute bottom-4 left-4 p-2 mt-4"
+                    style={{ backgroundColor: '#044FF1', borderRadius: '50px', color: 'white', fontWeight: 'bold' }}>Select tasks</button>
             </div>
         </div>
     );
