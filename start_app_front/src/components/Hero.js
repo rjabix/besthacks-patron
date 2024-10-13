@@ -22,7 +22,7 @@ export default function Hero({setShowApp, setPrompt}) {
                         className='bg-transparent border-2 border-purple-800 hover:bg-purple-800 text-white p-4 rounded-xl w-[200px] transition-colors duration-300'
                         onClick={() => {
                             setShowApp(true);
-                            setPrompt = document.getElementById('hero-area').value;
+                            setPrompt(document.getElementById('hero-area').value);
                             document.getElementById('offer-grid')?.scrollIntoView({behavior: 'smooth'});
 
                         }

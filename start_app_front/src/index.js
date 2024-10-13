@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import Header from "./components/Header";
 import OfferGrid from "./components/OfferGrid";
 import Hero from "./components/Hero";
+import Footer from './components/footer';
 
 function App() {
     const [showApp, setShowApp] = React.useState(false);
@@ -15,9 +16,10 @@ function App() {
         <Hero setShowApp={setShowApp} setPrompt={setPrompt}/>
         { showApp && (
             <>
-                <Header/>
+                <Header />
                 <OfferGrid prompt={prompt}/>
-                <SearchBar setPromt={setPrompt} />
+                {/*<SearchBar setPromt={setPrompt} />*/}
+                <Footer/>
             </>
         )}
     </div>
