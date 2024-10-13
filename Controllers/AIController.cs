@@ -47,27 +47,21 @@ public class AIController : ControllerBase
     [HttpPost("SearchJobs")]
     public async Task<IActionResult> SearchJobs([FromBody] ChatRequest searchRequest) // currently using ChatRequest as it also has 1 string field
     {
-        Vector queryEmbedding = await _embeddingService.GetSearchEmbedding(searchRequest.Prompt);
-        var jobs = await _context.SearchAsync(queryEmbedding, 0, searchRequest.Prompt.Length);
+        Vector queryEmbedding = await _embeddingService.GetSearchEmbeddingAsync(searchRequest.Prompt);
+        var jobs = await _context.SearchAsync(queryEmbedding, 0);
 
         // i think it would not work for other portals than pracuj.pl 
-        var jobs_results = jobs.Select(job => new { job.Key.Title, job.Key.Requirements, link = _config.GetValue<string>("Portals_start_url:" + job.Key.Portal.ToFriendlyString()) + job.Key.PortalId, accuracy = job.Value});
-
-        //Dictionary<Job, int> job_suitability = [];
-        //foreach (var job in jobs)
-        //{
-        //    job_suitability.Add(job, (int)job.DescriptionEmbedding!.L2Distance(queryEmbedding));
-        //}
+        var jobs_results = jobs.Select(job => new { job.Key.Id, job.Key.Title, job.Key.Requirements, link = _config.GetValue<string>("Portals_start_url:" + job.Key.Portal.ToFriendlyString()) + job.Key.PortalId, accuracy = job.Value});
 
         return Ok(jobs_results);
     }
 
-    [HttpGet("GetShorten{(id)}")]
+    [HttpGet("GetShorten/{id}")]
     public async Task<IActionResult> GetShorten(int id)
     {
-        Job job = await _context.Jobs.FirstAsync(job => job.Id == id) ?? throw new Exception("Job cannot be found.");
-        ChatCompletion response = await _client.CompleteChatAsync("shorten this: " + job.Title + " " + job.Requirements);
-        return Ok(response.Content[0].Text);
+        ;
+        
+        return Ok(await _embeddingService.GetShortenAsync(id));
     }
 
 }

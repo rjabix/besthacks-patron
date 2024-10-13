@@ -18,14 +18,14 @@ namespace hackathon_backend.Models
         }
 
 
-        public async Task<Dictionary<Job, double>> SearchAsync(Pgvector.Vector queryEmbedding, int page, int strlength)
+        public async Task<Dictionary<Job, double>> SearchAsync(Pgvector.Vector queryEmbedding, int page)
         {
             // this threshold is kinda like the accuracy of the search.
             // I would recommend to start with 0.5, which shoud
             // give you something. Normally 0.5 gives you too
             // much info. Tweaking it to the sweet spot is a fun experience.
             // it is different for any data.
-            double threshold = 1.0 - 0.002 * strlength;
+            double threshold = 1.05;
 
             // find neighbors in vector space and only take 5.
             // it also orders based on title embedding to show relevance of the order

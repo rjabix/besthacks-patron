@@ -1,4 +1,6 @@
 ﻿using hackathon_backend.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OpenAI.Chat;
 using OpenAI.Embeddings;
 using Pgvector;
@@ -40,7 +42,7 @@ namespace hackathon_backend.Services
             return new Vector(vector);
         }
 
-        public async Task<Vector> GetSearchEmbedding(string text)
+        public async Task<Vector> GetSearchEmbeddingAsync(string text)
         {
             ChatCompletionOptions options = new();
             options.Temperature = 0;
@@ -52,6 +54,28 @@ namespace hackathon_backend.Services
             ReadOnlyMemory<float> vector = embedding.ToFloats();
             Console.WriteLine($"Embedding: {vector}");
             return new Vector(vector);
+        }
+        public async Task<string> GetShortenAsync(int id)
+        {
+            Job job = await _context.Jobs.FirstAsync(job => job.Id == id) ?? throw new("Job cannot be found.");
+
+            if (job == null || job.Title == null || job.Requirements == null) throw new("Job has no title or requirements");
+
+            ChatCompletion response = await _chat_client.CompleteChatAsync("shorten this to 2-3 sentences: " + job.Title + " " + job.Requirements);
+
+            if (response.Content.Count == 0) throw new("Failed to shorten");
+
+            return response.Content[0].Text;
+
+        }
+
+        public async Task<string> GetLearningLinksAsync(string text)
+        {
+            ChatCompletion response = await _chat_client.CompleteChatAsync("Output like <what> = <link> find learning resources for every requirement: " + text);
+
+            if (response.Content.Count == 0) throw new("Failed to find learning resources");
+
+            return response.Content[0].Text;
         }
     }
 }

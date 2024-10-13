@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:models\\jobsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\hackathon-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:hackathon-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\models\\portal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\models\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:models\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|d:\\progamowanie pwr\\hackathon-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558DD13C-3C0D-4E9A-AB79-C223475EC158}|hackathon-backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,81 +54,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "hackathon-backend.http",
               "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\hackathon-backend.http",
               "RelativeDocumentMoniker": "hackathon-backend.http",
               "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\hackathon-backend.http",
               "RelativeToolTip": "hackathon-backend.http",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBQAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2024-10-12T12:21:42.411Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Portal.cs",
-              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\Portal.cs",
-              "RelativeDocumentMoniker": "Models\\Portal.cs",
-              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\Portal.cs",
-              "RelativeToolTip": "Models\\Portal.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAzwCEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:48:49.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JobsController.cs",
-              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\JobsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\JobsController.cs",
-              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\JobsController.cs",
-              "RelativeToolTip": "Controllers\\JobsController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAA6wDQAAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:14:28.018Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AIController.cs",
-              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\AIController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
-              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\AIController.cs",
-              "RelativeToolTip": "Controllers\\AIController.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAIA9wDkAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:31:50.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "JobsDbContext.cs",
-              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\JobsDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\JobsDbContext.cs",
-              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\JobsDbContext.cs",
-              "RelativeToolTip": "Models\\JobsDbContext.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowCQAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:21:12.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EmbeddingService.cs",
-              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Services\\EmbeddingService.cs",
-              "RelativeDocumentMoniker": "Services\\EmbeddingService.cs",
-              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Services\\EmbeddingService.cs",
-              "RelativeToolTip": "Services\\EmbeddingService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAYwC0AAABhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:20:32.053Z",
               "EditorCaption": ""
             },
             {
@@ -169,7 +104,69 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Portal.cs",
+              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\Portal.cs",
+              "RelativeDocumentMoniker": "Models\\Portal.cs",
+              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\Portal.cs",
+              "RelativeToolTip": "Models\\Portal.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwCEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T12:48:49.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\JobsController.cs",
+              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "Controllers\\JobsController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAiwDcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T12:14:28.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
+              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Controllers\\AIController.cs",
+              "RelativeToolTip": "Controllers\\AIController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAIA9wDkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:31:50.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JobsDbContext.cs",
+              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\JobsDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\JobsDbContext.cs",
+              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\JobsDbContext.cs",
+              "RelativeToolTip": "Models\\JobsDbContext.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwBsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:21:12.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "EmbeddingService.cs",
+              "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Services\\EmbeddingService.cs",
+              "RelativeDocumentMoniker": "Services\\EmbeddingService.cs",
+              "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Services\\EmbeddingService.cs",
+              "RelativeToolTip": "Services\\EmbeddingService.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAYwC0AAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:20:32.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Job.cs",
               "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Models\\Job.cs",
               "RelativeDocumentMoniker": "Models\\Job.cs",
@@ -177,12 +174,11 @@
               "RelativeToolTip": "Models\\Job.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAwwC4AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:02:00.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T11:02:00.451Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -190,18 +186,17 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-12T11:00:46.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T11:00:46.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Progamowanie pwr\\hackathon-backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Progamowanie pwr\\hackathon-backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAACYAAAAAAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T08:52:47.733Z",
               "EditorCaption": ""
