@@ -61,7 +61,7 @@ namespace hackathon_backend.Services
 
             if (job == null || job.Title == null || job.Requirements == null) throw new("Job has no title or requirements");
 
-            ChatCompletion response = await _chat_client.CompleteChatAsync("shorten this to 2-3 sentences: " + job.Title + " " + job.Requirements);
+            ChatCompletion response = await _chat_client.CompleteChatAsync("shorten this to 2-3 small sentences: " + job.Title + " " + job.Requirements);
 
             if (response.Content.Count == 0) throw new("Failed to shorten");
 
@@ -71,7 +71,9 @@ namespace hackathon_backend.Services
 
         public async Task<string> GetLearningLinksAsync(string text)
         {
-            ChatCompletion response = await _chat_client.CompleteChatAsync("Output like <what> = <link> find learning resources for every requirement: " + text);
+            ChatCompletionOptions options = new();
+            options.Temperature = 0;
+            ChatCompletion response = _chat_client.CompleteChat(["Output ONLY 2-3 things like <what> = <link> if link does exist, find learning resources for every requirement in json " + text], options);
 
             if (response.Content.Count == 0) throw new("Failed to find learning resources");
 

@@ -23,4 +23,13 @@ Accept: application/json
   "prompt": "junior full stack developer"
 }
 
+###
+POST {{hackathon_backend_HostAddress}}/api/ai/getlearninglinks/79
+Content-Type: application/json
+Accept: application/json
+
+{
+  "prompt": "junior full stack developer"
+}
+
 
