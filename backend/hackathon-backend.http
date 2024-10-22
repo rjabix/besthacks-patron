@@ -1,0 +1,35 @@
+﻿@hackathon_backend_HostAddress = http://localhost:5094
+
+POST {{hackathon_backend_HostAddress}}/api/jobs/createjob
+Content-Type: application/json
+Accept: application/json
+
+{
+  "company": "Accenture",
+  "title": "2",
+  "requirements": "posiadasz solidne doświadczenie w pracy z platformą Azure (znajomość Azure CEP, certyfikaty będą dodatkowym atutem), możesz pochwalić się wiedzą i doświadczeniem w zakresie zarządzania podatnościami oraz automatyzacji bezpieczeństwa (m. in. SAST, SCA, DAST, konteneryzacja), masz doświadczenie w monitorowaniu oraz pomiarze efektywności operacyjnej systemów CI/CD, pracował_ś z takimi narzędziami CI/CD, jak Github Actions, Azure DevOps Pipelines, Gitlab, znasz narzędzia do zabezpieczenia systemów operacyjnych (m. in. Active Directory, Windows networking, Group Policies, DNS, PKI i Certyfikaty), tematyka administracji serwerów Linux, baz danych oraz serwerów aplikacyjnych w środowisku produkcyjnym nie jest Ci obca, masz doświadczenie w pracy z językami skryptowymi (najlepiej Powershell i/lub Bash), Twój poziom języka angielskiego pozwala na swobodną komunikację (co najmniej B2/C1), łatwo odnajdujesz się w środowisku międzynarodowym i lubisz pracować w zespole. Mile widziane podstawowa wiedza z zakresu konfiguracji sieci, narzędzi oceny jakości kodu oraz praktyk bezpieczeństwa,Ops background oraz znajomość narzędzi bezpieczeństwa, znajomość technologii kontenerowych takich jak Docker oraz platform orkiestracyjnych (OpenShift, AKS).",
+  "portal": "pracuj.pl",
+  "portalid": 4224,
+  "validuntil": "2024-12-12"
+}
+
+###
+
+POST {{hackathon_backend_HostAddress}}/api/ai/searchjobs
+Content-Type: application/json
+Accept: application/json
+
+{
+  "prompt": "junior full stack developer"
+}
+
+###
+POST {{hackathon_backend_HostAddress}}/api/ai/getlearninglinks/79
+Content-Type: application/json
+Accept: application/json
+
+{
+  "prompt": "junior full stack developer"
+}
+
+
